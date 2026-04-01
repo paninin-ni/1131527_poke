@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.btnTest = new System.Windows.Forms.Button();
-            this.lblNum = new System.Windows.Forms.Label();
             this.picTest = new System.Windows.Forms.PictureBox();
+            this.lblNum = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,22 +40,11 @@
             this.btnTest.Font = new System.Drawing.Font("Microsoft JhengHei", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnTest.Location = new System.Drawing.Point(281, 66);
             this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(203, 94);
+            this.btnTest.Size = new System.Drawing.Size(206, 100);
             this.btnTest.TabIndex = 1;
             this.btnTest.Text = "換牌";
             this.btnTest.UseVisualStyleBackColor = false;
-            // 
-            // lblNum
-            // 
-            this.lblNum.AutoSize = true;
-            this.lblNum.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblNum.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNum.Location = new System.Drawing.Point(281, 187);
-            this.lblNum.Name = "lblNum";
-            this.lblNum.Size = new System.Drawing.Size(67, 42);
-            this.lblNum.TabIndex = 2;
-            this.lblNum.Text = "      ";
-            this.lblNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
             // picTest
             // 
@@ -67,6 +56,18 @@
             this.picTest.TabIndex = 0;
             this.picTest.TabStop = false;
             // 
+            // lblNum
+            // 
+            this.lblNum.AutoSize = true;
+            this.lblNum.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblNum.Font = new System.Drawing.Font("Microsoft JhengHei", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblNum.Location = new System.Drawing.Point(281, 187);
+            this.lblNum.Name = "lblNum";
+            this.lblNum.Size = new System.Drawing.Size(164, 38);
+            this.lblNum.TabIndex = 2;
+            this.lblNum.Text = "                     ";
+            this.lblNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmPicTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
@@ -77,7 +78,7 @@
             this.Controls.Add(this.picTest);
             this.Name = "frmPicTest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "圖片資源測試";
             ((System.ComponentModel.ISupportInitialize)(this.picTest)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
