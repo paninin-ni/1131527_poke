@@ -16,7 +16,7 @@ namespace s1131527_poke
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPicTest());
+            Application.Run(new frmPoker());
         }
     }
 }
