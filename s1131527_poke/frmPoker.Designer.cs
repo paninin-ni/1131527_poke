@@ -81,6 +81,7 @@
             this.btnChangeCard.TabIndex = 1;
             this.btnChangeCard.Text = "換牌";
             this.btnChangeCard.UseVisualStyleBackColor = true;
+            this.btnChangeCard.Click += new System.EventHandler(this.btnChangeCard_Click);
             // 
             // btnCheck
             // 
@@ -91,6 +92,7 @@
             this.btnCheck.TabIndex = 2;
             this.btnCheck.Text = "判斷牌型";
             this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // lblResult
             // 
