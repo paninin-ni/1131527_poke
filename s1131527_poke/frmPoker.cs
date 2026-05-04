@@ -13,6 +13,9 @@ namespace s1131527_poke
     public partial class frmPoker : Form
     {
         PictureBox[] pic = new PictureBox[5];
+
+        int[] allPoker = new int[52];
+        int[] playerPoker = new int[5];
         public frmPoker()
         {
             InitializeComponent();
@@ -47,9 +50,44 @@ namespace s1131527_poke
         {
             return Properties.Resources.ResourceManager.GetObject(name) as Image;
         }
+        
         private void grpPoker_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private async void btnDealCard_Click(object sender, EventArgs e)
+        {
+            // 先將牌面蓋掉
+            for (int i = 0; i < pic.Length; i++)
+            {
+                pic[i].Image = GetImage("back");
+            }
+            // 初始化52張牌
+            for (int i = 0; i < allPoker.Length; i++)
+            {
+                allPoker[i] = i;
+            }
+            // 洗牌
+            Shuffle();
+            await Task.Delay(500);
+            // 發牌
+            for (int i = 0; i < playerPoker.Length; i++)
+            {
+                pic[i].Image = GetImage("pic" + (allPoker[i] + 1));
+                playerPoker[i] = allPoker[i];
+            }
+        }
+        private void Shuffle()
+        {
+            Random rand = new Random();
+            for (int i = 0; i < allPoker.Length; i++)
+            {
+                int r = rand.Next(allPoker.Length);
+                int temp = allPoker[r];
+                allPoker[r] = allPoker[0];
+                allPoker[0] = temp;
+            }
         }
     }
 }
