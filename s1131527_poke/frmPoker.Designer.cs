@@ -36,7 +36,7 @@
             this.grpPoker.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpPoker.Location = new System.Drawing.Point(61, 33);
             this.grpPoker.Name = "grpPoker";
-            this.grpPoker.Size = new System.Drawing.Size(485, 160);
+            this.grpPoker.Size = new System.Drawing.Size(1120, 483);
             this.grpPoker.TabIndex = 0;
             this.grpPoker.TabStop = false;
             this.grpPoker.Text = "牌桌";
@@ -46,7 +46,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 235);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1224, 577);
             this.Controls.Add(this.grpPoker);
             this.Name = "frmPoker";
             this.Text = "frmPoker";

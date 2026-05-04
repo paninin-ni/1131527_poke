@@ -29,5 +29,10 @@ namespace s1131527_poke
             picTest.Image = GetImage($"pic{picNum}");
             lblNum.Text = picNum.ToString();
         }
+
+        private void picTest_Click(object sender, EventArgs e)
+        {
+            this.picTest.Image = GetImage("back");
+        }
     }
 }

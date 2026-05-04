@@ -55,6 +55,7 @@
             this.picTest.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picTest.TabIndex = 0;
             this.picTest.TabStop = false;
+            this.picTest.Click += new System.EventHandler(this.picTest_Click);
             // 
             // lblNum
             // 
