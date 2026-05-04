@@ -101,7 +101,7 @@ namespace s1131527_poke
                 playerPoker[i] = allPoker[i];
             }
 
-            this.ShowCards();
+            //this.ShowCards();
 
             for (int i = 0; i < pic.Length; i++)
             {
@@ -251,6 +251,66 @@ namespace s1131527_poke
             lblResult.Text = result;
             btnChangeCard.Enabled = false;
             btnCheck.Enabled = false;
+        }
+
+        private void frmPoker_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (btnDealCard.Enabled == false)
+            {
+                switch ((int)e.KeyChar)
+                {
+                    case 'q': // q鍵
+                              // 同花大順
+                        playerPoker[0] = 51;
+                        playerPoker[1] = 47;
+                        playerPoker[2] = 43;
+                        playerPoker[3] = 39;
+                        playerPoker[4] = 3;
+                        break;
+                    case 'w': // w鍵
+                              // 同花順
+                        playerPoker[0] = 37;
+                        playerPoker[1] = 33;
+                        playerPoker[2] = 29;
+                        playerPoker[3] = 25;
+                        playerPoker[4] = 21;
+                        break;
+                    case 'e': // e鍵
+                              // 同花
+                        playerPoker[0] = 50;
+                        playerPoker[1] = 38;
+                        playerPoker[2] = 34;
+                        playerPoker[3] = 22;
+                        playerPoker[4] = 18;
+                        break;
+                    case 'r': // r鍵
+                              // 鐵支
+                        playerPoker[0] = 48;
+                        playerPoker[1] = 39;
+                        playerPoker[2] = 38;
+                        playerPoker[3] = 37;
+                        playerPoker[4] = 36;
+                        break;
+                    case 't': // t鍵
+                              // 葫蘆
+                        playerPoker[0] = 30;
+                        playerPoker[1] = 29;
+                        playerPoker[2] = 6;
+                        playerPoker[3] = 5;
+                        playerPoker[4] = 4;
+                        break;
+                    case 'y': // y鍵
+                              // 三條
+                        playerPoker[0] = 48;
+                        playerPoker[1] = 39;
+                        playerPoker[2] = 15;
+                        playerPoker[3] = 14;
+                        playerPoker[4] = 13;
+                        break;
+                }
+                // 顯示五張撲克牌到桌面上
+                ShowCards();
+            }
         }
     }
 }

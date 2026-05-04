@@ -111,9 +111,11 @@
             this.ClientSize = new System.Drawing.Size(1151, 561);
             this.Controls.Add(this.grpButton);
             this.Controls.Add(this.grpPoker);
+            this.KeyPreview = true;
             this.Name = "frmPoker";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPoker";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmPoker_KeyPress);
             this.grpButton.ResumeLayout(false);
             this.ResumeLayout(false);
 
