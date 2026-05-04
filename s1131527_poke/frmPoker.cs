@@ -32,6 +32,8 @@ namespace s1131527_poke
                 pic[i].Top = 30;
                 pic[i].Left = 10 + ((pic[i].Width + 10) * i);
                 pic[i].Visible = true;
+                pic[i].Enabled = false;
+                pic[i].Tag = "back";
 
                 // 將 pic 丟至到 grpPorker 內
                 this.grpPoker.Controls.Add(pic[i]);
@@ -43,7 +45,18 @@ namespace s1131527_poke
         private void Pic_Click(object sender, EventArgs e)
         {
             PictureBox pic = (PictureBox)sender;
-            MessageBox.Show("你選擇了" + pic.Name);
+            int index = int.Parse(pic.Name.Replace("pic", ""));
+            // 如果 pic 的 Tag 為 back，則將顯示撲克牌
+            if (pic.Tag.ToString() == "back")
+            {
+                pic.Tag = "front";
+                pic.Image = GetImage("pic" + (playerPoker[index] + 1));
+            }
+            else
+            {
+                pic.Tag = "back";
+                pic.Image = GetImage("back");
+            }
         }
 
         private Image GetImage(string name)
@@ -71,12 +84,21 @@ namespace s1131527_poke
             // 洗牌
             Shuffle();
             await Task.Delay(500);
+
             // 發牌
             for (int i = 0; i < playerPoker.Length; i++)
             {
                 pic[i].Image = GetImage("pic" + (allPoker[i] + 1));
                 playerPoker[i] = allPoker[i];
             }
+
+            for (int i = 0; i < pic.Length; i++)
+            {
+                pic[i].Enabled = true;
+                pic[i].Tag = "front";
+            }
+
+            btnChangeCard.Enabled = true;
         }
         private void Shuffle()
         {
