@@ -5,18 +5,10 @@
 
 ### 執行說明:
 > 1. 下注設定：在「押注金額」欄位輸入本次欲下注的數值，點選「押注」按鈕，系統將自動從「總資金」中扣除該金額並解鎖發牌功能
-
-
-<img width="524" height="376" alt="Image" src="https://github.com/user-attachments/assets/7b38db40-189f-431d-b80d-9d60b8f83d93" />
-
-
+> <img width="524" height="376" alt="Image" src="https://github.com/user-attachments/assets/7b38db40-189f-431d-b80d-9d60b8f83d93" />
 > 2. 初始發牌：按下「發牌」按鈕，系統會以亂數進行洗牌，並隨機發出五張撲克牌顯示於牌桌介面上
 > 3. 換牌機制：玩家可直接點擊欲放棄的撲克牌（牌面會翻轉回背面表示棄牌），確認後按下「換牌」按鈕，系統將替換這些被選中的牌，隨後自動鎖定點擊與換牌功能
-
-
-<img width="522" height="376" alt="Image" src="https://github.com/user-attachments/assets/f0f54c7a-6678-45ea-ab7e-c69437e400b6" />
-
-
+> <img width="522" height="376" alt="Image" src="https://github.com/user-attachments/assets/f0f54c7a-6678-45ea-ab7e-c69437e400b6" />
 > 4. 查看結果：按下「判斷牌型」按鈕，程式將依據最終的五張牌面進行比對與計算：
 > * 牌型判定：於介面下方文字欄位精準顯示最終組成的牌型（如：同花順、三條、兩對等）
 > * 獎金結算：系統會依據該牌型的專屬賠率乘以押注金額，算出贏得之獎金，並自動加回總資金內
