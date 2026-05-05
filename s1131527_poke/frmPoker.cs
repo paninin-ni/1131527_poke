@@ -279,13 +279,23 @@ namespace s1131527_poke
             txtBet.Enabled = true;
 
             lblResult.Text = result;
+
+            if (odds > 0)
+            {
+                MessageBox.Show($"恭喜！贏得獎金：{winMoney} 元", "結算結果", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show($"未中獎，請再接再厲！", "結算結果", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
             btnChangeCard.Enabled = false;
             btnCheck.Enabled = false;
         }
 
         private void frmPoker_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (btnDealCard.Enabled == false)
+            if (btnChangeCard.Enabled == true)
             {
                 switch ((int)e.KeyChar)
                 {
@@ -350,7 +360,7 @@ namespace s1131527_poke
 
         private void btnBet_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(txtBet.Text, out betMoney) && betMoney > 0)
+            if (int.TryParse(txtBet.Text, out betMoney) && betMoney >= 0)
             {
                 if (totalMoney >= betMoney)
                 {
@@ -360,6 +370,14 @@ namespace s1131527_poke
                     btnDealCard.Enabled = true; // 押注後才能發牌
                     btnBet.Enabled = false;
                     txtBet.Enabled = false;
+
+                    lblResult.Text = "";
+                    for (int i = 0; i < pic.Length; i++)
+                    {
+                        pic[i].Image = GetImage("back");
+                        pic[i].Tag = "back";
+                        pic[i].Enabled = false; // 確保在發牌前不能提早點擊牌
+                    }
                 }
                 else
                 {

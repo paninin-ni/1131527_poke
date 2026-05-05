@@ -165,9 +165,9 @@
             // 
             // txtBet
             // 
-            this.txtBet.Location = new System.Drawing.Point(609, 54);
+            this.txtBet.Location = new System.Drawing.Point(631, 54);
             this.txtBet.Name = "txtBet";
-            this.txtBet.Size = new System.Drawing.Size(250, 50);
+            this.txtBet.Size = new System.Drawing.Size(228, 50);
             this.txtBet.TabIndex = 7;
             this.txtBet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtBet.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
