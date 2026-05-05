@@ -312,5 +312,10 @@ namespace s1131527_poke
                 ShowCards();
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
