@@ -35,11 +35,11 @@
             this.btnCheck = new System.Windows.Forms.Button();
             this.lblResult = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.txtTotalMoney = new System.Windows.Forms.Label();
+            this.btnBet = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBet = new System.Windows.Forms.TextBox();
             this.grpButton.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -112,11 +112,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtBet);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.txtTotalMoney);
+            this.groupBox1.Controls.Add(this.btnBet);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(61, 408);
             this.groupBox1.Name = "groupBox1";
@@ -125,24 +125,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "功能";
             // 
-            // label1
+            // txtTotalMoney
             // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point(148, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(288, 45);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "1000000";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtTotalMoney.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.txtTotalMoney.Location = new System.Drawing.Point(148, 57);
+            this.txtTotalMoney.Name = "txtTotalMoney";
+            this.txtTotalMoney.Size = new System.Drawing.Size(288, 45);
+            this.txtTotalMoney.TabIndex = 3;
+            this.txtTotalMoney.Text = "1000000";
+            this.txtTotalMoney.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // button3
+            // btnBet
             // 
-            this.button3.Location = new System.Drawing.Point(881, 54);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(141, 50);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "押注";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnBet.Location = new System.Drawing.Point(881, 54);
+            this.btnBet.Name = "btnBet";
+            this.btnBet.Size = new System.Drawing.Size(141, 50);
+            this.btnBet.TabIndex = 0;
+            this.btnBet.Text = "押注";
+            this.btnBet.UseVisualStyleBackColor = true;
+            this.btnBet.Click += new System.EventHandler(this.btnBet_Click);
             // 
             // label2
             // 
@@ -162,14 +163,14 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "押注金額";
             // 
-            // textBox1
+            // txtBet
             // 
-            this.textBox1.Location = new System.Drawing.Point(609, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 50);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtBet.Location = new System.Drawing.Point(609, 54);
+            this.txtBet.Name = "txtBet";
+            this.txtBet.Size = new System.Drawing.Size(250, 50);
+            this.txtBet.TabIndex = 7;
+            this.txtBet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtBet.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // frmPoker
             // 
@@ -201,10 +202,10 @@
         private System.Windows.Forms.Button btnChangeCard;
         private System.Windows.Forms.Button btnDealCard;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label txtTotalMoney;
+        private System.Windows.Forms.Button btnBet;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBet;
     }
 }

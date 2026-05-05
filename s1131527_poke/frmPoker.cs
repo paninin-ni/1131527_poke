@@ -16,10 +16,20 @@ namespace s1131527_poke
 
         int[] allPoker = new int[52];
         int[] playerPoker = new int[5];
+
+        long totalMoney = 1000000; // 總資金
+        int betMoney = 0;          // 押注金額
+
         public frmPoker()
         {
             InitializeComponent();
             InitializePoker();
+            txtTotalMoney.Text = totalMoney.ToString();
+            txtBet.Text = "0";
+
+            btnDealCard.Enabled = false;
+            btnChangeCard.Enabled = false;
+            btnCheck.Enabled = false;
         }
         private void InitializePoker()
         {
@@ -121,7 +131,7 @@ namespace s1131527_poke
             {
                 int r = rand.Next(allPoker.Length);
                 int temp = allPoker[r];
-                allPoker[r] = allPoker[0];
+                allPoker[r] = allPoker[i];
                 allPoker[0] = temp;
             }
         }
@@ -207,47 +217,67 @@ namespace s1131527_poke
             // 判斷是否為一對
             bool isOnePair = (pointCount[0] == 2 && pointCount[1] == 1);
 
+            int odds = 0;
+
             string result = "";
             if (isRoyalisFlush)
             {
                 result = $"{colorList[0]} 同花大順";
+                odds = 250;
             }
             else if (isStraightFlush)
             {
                 result = $"{colorList[0]} 同花順";
+                odds = 50;
             }
             else if (isStraight)
             {
                 result = "順子";
+                odds = 4;
             }
             else if (isFourOfAKind)
             {
                 result = $"{pointList[0]} 鐵支";
+                odds = 25;
             }
             else if (isFullHouse)
             {
                 result = $"{pointList[0]}三張{pointList[1]}兩張 葫蘆";
+                odds = 9;
             }
             else if (isFlush)
             {
                 result = $"{colorList[0]} 同花";
+                odds = 6;
             }
             else if (isThreeOfAKind)
             {
                 result = $"{pointList[0]} 三條";
+                odds = 3;
             }
             else if (isTwoPair)
             {
                 result = $"{pointList[0]},{pointList[1]} 兩對";
+                odds = 2;
             }
             else if (isOnePair)
             {
                 result = $"{pointList[0]} 一對";
+                odds = 1;
             }
             else
             {
                 result = "雜牌";
+                odds = 0;
             }
+
+            long winMoney = betMoney * odds;    // 計算贏得的獎金
+            totalMoney += winMoney;             // 獎金加回總資金
+            txtTotalMoney.Text = totalMoney.ToString(); // 更新畫面顯示
+            // 解除鎖定，允許玩家進行下一輪下注
+            btnBet.Enabled = true;
+            txtBet.Enabled = true;
+
             lblResult.Text = result;
             btnChangeCard.Enabled = false;
             btnCheck.Enabled = false;
@@ -316,6 +346,30 @@ namespace s1131527_poke
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBet_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtBet.Text, out betMoney) && betMoney > 0)
+            {
+                if (totalMoney >= betMoney)
+                {
+                    totalMoney -= betMoney;
+                    txtTotalMoney.Text = totalMoney.ToString();
+
+                    btnDealCard.Enabled = true; // 押注後才能發牌
+                    btnBet.Enabled = false;
+                    txtBet.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("總資金不足！");
+                }
+            }
+            else
+            {
+                MessageBox.Show("請輸入正確的押注金額！");
+            }
         }
     }
 }
